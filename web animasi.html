@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Materi Pembelajaran Matematika Interaktif</title>
+  <style>
+    :root{
+      --primary:#0099cc;
+      --primary-dark:#0077aa;
+      --popup-blue:#0077aa;
+    }
+    html,body{height:100%;margin:0;font-family:"Poppins",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color:#000;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{
+      text-align:center;
+      padding:28px 16px;
+      background:rgba(255,255,255,0.78);
+      border-bottom:2px solid rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+    }
+    header img{width:120px;display:block;margin:0 auto 8px;}
+    header h1{margin:6px 0;font-size:26px;}
+    header p{margin:0;color:#333;}
+
+    .container{
+      max-width:920px;
+      margin:36px auto;
+      padding:22px;
+      background:rgba(255,255,255,0.9);
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .card{background:linear-gradient(180deg,#fafafa,#f2f2f2);padding:18px;border-radius:12px;margin-bottom:18px;}
+    .card h2{margin:0 0 8px;color:var(--primary-dark);}
+    .identity{border-left:6px solid var(--primary);padding:12px 16px;border-radius:8px;background:rgba(255,255,255,0.95);margin-bottom:16px;}
+
+    .actions{margin-top:12px;}
+    .btn{
+      display:inline-block;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn:hover{background:var(--primary-dark);}
+
+    /* quiz */
+    #quizSection{display:none;margin-top:18px;background:rgba(255,255,255,0.95);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08);}
+    .quiz-question{margin-bottom:12px;font-weight:600;}
+    .quiz-options label{display:block;margin:6px 0;cursor:pointer;}
+
+    /* popup (fullscreen translucent) */
+    #scorePopup{
+      display:none;
+      position:fixed;inset:0;
+      background:rgba(255,255,255,0.78);
+      backdrop-filter: blur(6px);
+      z-index:1200;
+      align-items:center;
+      justify-content:center;
+    }
+    .popup-inner{
+      width:min(720px,92%);
+      background:rgba(255,255,255,0.98);
+      border-radius:20px;
+      padding:28px 28px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.22);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .popup-inner h2{font-size:36px;margin:8px 0;color:var(--popup-blue);animation:pop 0.8s ease-out;}
+    .popup-inner p{font-size:20px;margin:8px 0;color:#333;}
+    .popup-score{
+      font-size:64px;
+      font-weight:800;
+      margin:10px 0 6px;
+      color:var(--popup-blue);
+      letter-spacing:1px;
+      text-shadow:0 6px 18px rgba(0,119,170,0.14);
+    }
+    .popup-msg{font-size:18px;margin-top:6px;color:#444;}
+    .popup-actions{margin-top:18px;display:flex;gap:12px;justify-content:center;}
+    .btn-ghost{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:8px 14px;border-radius:10px;font-weight:600;cursor:pointer;}
+    .btn-ghost:hover{background:var(--primary);color:#fff;border-color:var(--primary-dark);}
+
+    @keyframes pop {
+      0% { transform: scale(.6); opacity:0 }
+      70% { transform: scale(1.06); opacity:1 }
+      100% { transform: scale(1); opacity:1 }
+    }
+
+    /* confetti */
+    .confetti-piece{
+      position:fixed;
+      z-index:1300;
+      pointer-events:none;
+      will-change:transform,opacity;
+    }
+
+    footer{margin-top:20px;padding:18px 24px;background:rgba(255,255,255,0.85);text-align:center;border-top:1px solid rgba(0,0,0,0.04);}
+    @media (max-width:600px){
+      .popup-inner h2{font-size:28px}
+      .popup-score{font-size:48px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unimus.png.png" alt="Logo Unimus">
+    <h1>Materi Pembelajaran Matematika Interaktif</h1>
+    <p>Materi matematika berbasis Canva yang menarik dan mudah dipahami untuk siswa.</p>
+  </header>
+
+  <main class="container" role="main">
+    <div class="card identity" aria-labelledby="id-title">
+      <h2 id="id-title">Identitas</h2>
+      <p><strong>Nama:</strong> Anggita Kumala Sari<br>
+         <strong>NIM:</strong> B2B023047<br>
+         <strong>Mata Kuliah:</strong> Multimedia Web</p>
+    </div>
+
+    <div class="card">
+      <h2>TRIGONOMETRI</h2>
+      <p>Materi ini membahas perbandingan rumus trigonometri pada segitiga siku-siku.</p>
+
+      <div class="actions">
+        <a class="btn" href="https://www.canva.com/design/DAG311ckS0M/ktZCwjGgXCXO5A1cV3SanA/watch?utm_content=DAG311ckS0M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbcf2b1ea59" target="_blank" rel="noopener">Lihat di Canva</a>
+        <button class="btn" id="openQuizBtn">Quiz Interaktif</button>
+      </div>
+
+      <!-- QUIZ SECTION -->
+      <div id="quizSection">
+        <form id="quizForm">
+          <div class="quiz-item">
+            <div class="quiz-question">1. Jika panjang sisi depan sudut A adalah 3 cm dan sisi miringnya 6 cm, maka nilai sin A adalah ...</div>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a"> a. ½</label>
+              <label><input type="radio" name="q1" value="b"> b. 0,5</label>
+              <label><input type="radio" name="q1" value="c"> c. 2</label>
+              <label><input type="radio" name="q1" value="d"> d. 1</label>
+            </div>
+          </div>
+
+          <div class="quiz-item">
+            <div class="quiz-question">2. Diketahui segitiga siku-siku dengan sisi depan 4 cm dan sisi samping 3 cm. Maka tan A = ...</div>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a"> a. ¾</label>
+              <label><input type="radio" name="q2" value="b"> b. 4/3</label>
+              <label><input type="radio" name="q2" value="c"> c. 1/3</label>
+              <label><input type="radio" name="q2" value="d"> d. 3/4</label>
+            </div>
+          </div>
+
+          <div class="quiz-item">
+            <div class="quiz-question">3. Dalam segitiga siku-siku, cos A = sisi samping / sisi miring. Jika sisi samping 5 cm dan sisi miring 13 cm, maka cos A = ...</div>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a"> a. 5/13</label>
+              <label><input type="radio" name="q3" value="b"> b. 12/13</label>
+              <label><input type="radio" name="q3" value="c"> c. 13/5</label>
+              <label><input type="radio" name="q3" value="d"> d. 8/13</label>
+            </div>
+          </div>
+
+          <div class="quiz-item">
+            <div class="quiz-question">4. Nilai sin 30° dalam perbandingan trigonometri adalah ...</div>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a"> a. ½</label>
+              <label><input type="radio" name="q4" value="b"> b. √3/2</label>
+              <label><input type="radio" name="q4" value="c"> c. 1</label>
+              <label><input type="radio" name="q4" value="d"> d. 0</label>
+            </div>
+          </div>
+
+          <div class="quiz-item">
+            <div class="quiz-question">5. Jika sin A = 3/5, maka cos A bernilai ...</div>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a"> a. 4/5</label>
+              <label><input type="radio" name="q5" value="b"> b. 0,8</label>
+              <label><input type="radio" name="q5" value="c"> c. 3/4</label>
+              <label><input type="radio" name="q5" value="d"> d. 1</label>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;">
+            <button type="button" class="btn" id="submitBtn">Kirim Jawaban</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- full-screen popup -->
+  <div id="scorePopup" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="popup-inner" role="document">
+      <h2 id="popupTitle">🎉 Nilai Kamu 🎉</h2>
+      <div class="popup-score" id="popupScore">0</div>
+      <p class="popup-msg" id="popupMsg">...</p>
+
+      <div class="popup-actions">
+        <button class="btn-ghost" id="retryBtn">Coba Lagi</button>
+        <button class="btn" id="closeBtn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>2025 — Materi Interaktif Matematika</strong> | dibuat oleh Anggita Kumala Sari</p>
+  </footer>
+
+  <audio id="applauseAudio" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2021/10/17/audio_3d4a7b2b9d.mp3?filename=applause-8-6406.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const correct = { q1: "b", q2: "b", q3: "a", q4: "a", q5: "a" };
+    const quizSection = document.getElementById('quizSection');
+    const openQuizBtn = document.getElementById('openQuizBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const scorePopup = document.getElementById('scorePopup');
+    const popupScore = document.getElementById('popupScore');
+    const popupMsg = document.getElementById('popupMsg');
+    const applause = document.getElementById('applauseAudio');
+    const retryBtn = document.getElementById('retryBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    openQuizBtn.addEventListener('click', () => {
+      quizSection.style.display = quizSection.style.display === 'block' ? 'none' : 'block';
+      quizSection.setAttribute('aria-hidden', quizSection.style.display !== 'block');
+      if (quizSection.style.display === 'block') {
+        setTimeout(()=> quizSection.scrollIntoView({behavior:'smooth'}), 120);
+      }
+    });
+
+    submitBtn.addEventListener('click', () => {
+      let correctCount = 0;
+      for (let k in correct) {
+        const sel = document.querySelector(`input[name="${k}"]:checked`);
+        if (sel && sel.value === correct[k]) correctCount++;
+      }
+      const nilai = Math.round((correctCount / 5) * 100);
+      showScorePopup(nilai, correctCount);
+    });
+
+    function showScorePopup(nilai) {
+      let msg = '';
+      if (nilai >= 80) msg = 'Hebat! Kamu menguasai materinya 🎉';
+      else if (nilai >= 60) msg = 'Bagus! Tinggal sedikit lagi 💪';
+      else msg = 'Jangan menyerah, coba lagi ya! 🌱';
+
+      popupMsg.textContent = msg;
+      scorePopup.style.display = 'flex';
+      scorePopup.setAttribute('aria-hidden','false');
+
+      try { applause.currentTime = 0; applause.play().catch(()=>{}); } catch(e){}
+      launchConfetti();
+      animateNumber(popupScore, 0, nilai, 900);
+      setTimeout(()=> closeBtn.focus(), 1000);
+    }
+
+    function closePopup() {
+      try { applause.pause(); applause.currentTime = 0; } catch(e){}
+      document.querySelectorAll('.confetti-piece').forEach(n=>n.remove());
+      scorePopup.style.display = 'none';
+      scorePopup.setAttribute('aria-hidden','true');
+    }
+
+    retryBtn.addEventListener('click', () => {
+      document.getElementById('quizForm').reset();
+      closePopup();
+      setTimeout(()=> {
+        quizSection.style.display = 'block';
+        quizSection.scrollIntoView({behavior:'smooth'});
+      }, 150);
+    });
+
+    closeBtn.addEventListener('click', () => closePopup());
+
+    function animateNumber(el, start, end, duration) {
+      const startTime = performance.now();
+      function frame(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(start + (end - start) * easeOutCubic(progress));
+        el.textContent = value;
+        if (progress < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+
+    function launchConfetti() {
+      const count = 80;
+      for (let i=0;i<count;i++){
+        const el = document.createElement('div');
+        el.className = 'confetti-piece';
+        const size = Math.floor(Math.random()*10)+6;
+        el.style.width = size + 'px';
+        el.style.height = (Math.random()>0.5? size+'px' : (size+6)+'px');
+        el.style.left = (Math.random()*100) + 'vw';
+        el.style.top = '-10vh';
+        const hue = Math.floor(Math.random()*360);
+        el.style.background = `hsl(${hue} 90% 60%)`;
+        el.style.opacity = (0.7 + Math.random()*0.3).toString();
+        const duration = 2000 + Math.random()*2000;
+        const delay = Math.random()*300;
+        el.style.transition = `transform ${duration}ms linear ${delay}ms, opacity ${duration}ms linear ${delay}ms`;
+        document.body.appendChild(el);
+        requestAnimationFrame(()=>{
+          const endX = (Math.random()*200 - 100);
+          const endY = 90 + Math.random()*70;
+          el.style.transform = `translate(${endX}vw, ${endY}vh) rotate(${Math.random()*1080}deg)`;
+          el.style.opacity = '0';
+        });
+        setTimeout(()=> el.remove(), duration + delay + 150);
+      }
+    }
+
+    scorePopup.addEventListener('click', (e) => {
+      if (e.target === scorePopup) closePopup();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && scorePopup.style.display === 'flex') closePopup();
+    });
+  </script>
+</body>
+</html>
